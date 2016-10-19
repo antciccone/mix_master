@@ -23,7 +23,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'pry-rails'
 gem 'unicorn'
 gem "factory_girl_rails"
-gem "database_cleaner" 
+gem "database_cleaner"
+gem 'omniauth-oauth2'
+gem "figaro"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
