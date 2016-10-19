@@ -22,6 +22,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'pry-rails'
 gem 'unicorn'
+gem "factory_girl_rails"
+gem "database_cleaner" 
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
