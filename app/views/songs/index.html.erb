@@ -14,12 +14,8 @@
     </ul>
   </div>
 
+<h1> Song List </h1>
+<% @songs.each do |song|  %>
 
-
-<h1> All Artists </h1>
-
-<% @artists.each do |a| %>
-<h3><%= link_to a.name, artist_path(a) %><h3>
-<%end%>
-
-<h4><%= link_to "New Artist", new_artist_path %></h4>
+<%= link_to song.title, song_path(song)%></br>
+<% end %>

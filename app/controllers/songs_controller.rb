@@ -1,5 +1,9 @@
 class SongsController < ApplicationController
 
+  def index
+    @songs = Song.all
+  end
+
   def new
     @artist = Artist.find(params[:artist_id])
     @song = @artist.songs.new
@@ -11,9 +15,12 @@ class SongsController < ApplicationController
 
   def create
     @artist = Artist.find(params[:artist_id])
-    @song = @artist.songs.create(song_params)
-
+    @song = @artist.songs.new(song_params)
+    if @song.save
     redirect_to song_path(@song)
+    else
+    render :new
+    end
   end
 
   private

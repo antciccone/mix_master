@@ -2,17 +2,16 @@
 <html>
 <head>
   <title>MixMaster</title>
+  <title>MixMaster</title>
+  <link href='css/bootstrap.css' rel='stylesheet'>
+  <link href='css/main.css' rel='stylesheet'>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if current_user %>
-    <h3>Welcome <%= current_user.uid %></h3>
-    <%= link_to "Sign out", logout_path, method: :delete %>
-  <% else %>
-    <%= link_to "Sign in with Spotify", "/auth/spotify" %>
-  <% end %>
+
+
 <%= yield %>
 
 </body>

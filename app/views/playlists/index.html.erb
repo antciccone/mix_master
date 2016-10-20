@@ -1,3 +1,19 @@
+<div class='navbar navbar-inverse'>
+      <a class='navbar-brand'><% if current_user %>
+        <p>Welcome <%= current_user.uid %></p>
+        <%= link_to "Sign out", logout_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign in with Spotify", "/auth/spotify" %>
+      <% end %></a>
+      <ul class='nav navbar-nav navbar-right'>
+          <li><a href="/artists">All Artists</a></li>
+          <li><a href="/songs">All Songs</a></li>
+          <li><a href="/playlists">All Playlists</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
 <h1> All Playlists </h1>
 <%= link_to "New Playlist", new_playlist_path %>
 <% @playlists.each do |playlist| %>
