@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :songs, only: [:show, :index]
   resources :playlists
+  resources :users 
 
   root to: 'artists#root'
 
