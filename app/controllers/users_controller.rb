@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+ class UsersController < ApplicationController
 
   def new
     @user = User.new
@@ -10,6 +10,16 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       redirect_to new_user_path
-    end 
+    end
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
